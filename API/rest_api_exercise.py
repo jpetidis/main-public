@@ -36,8 +36,8 @@ def print_all_market_data(market_data):
 def get_crypto_currency_data(market_prices, crypto_currency=None):
     for item in market_prices:
         if crypto_currency in item:
-            output = f"\n{crypto_currency} Price: {item[crypto_currency]['price']}\n{crypto_currency} "\
-                     f"Volume: {item[crypto_currency]['volume']}"\
+            output = f"\n{crypto_currency} Price: {item[crypto_currency]['price']}" \
+                     f"\n{crypto_currency} Volume: {item[crypto_currency]['volume']}"\
                      f"\n{crypto_currency} High: {item[crypto_currency]['high']} " \
                      f"\n{crypto_currency} Low: {item[crypto_currency]['low']}"
             print(output)
