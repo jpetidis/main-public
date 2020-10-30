@@ -73,7 +73,7 @@ def main():
     market_data = get_market_data()
 
     # Step 2 - Specify nested dictionary from market_data and output result
-    get_crypto_currency_data(market_data, "LTC-TRTL")
+    get_crypto_currency_data(market_data)
 
     # Optional - use ticker and order book functions
     # get_crypto_currency_ticker()
