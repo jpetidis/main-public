@@ -18,6 +18,7 @@ session = boto3.session.Session(profile_name='saml')
 ec2 = session.client('ec2', region_name="ap-southeast-2")
 vpc_info = []
 
+# Enter VPC ID to show all subnets
 vpc_id = ""
 response = describe_subnets(vpc_id)
 
