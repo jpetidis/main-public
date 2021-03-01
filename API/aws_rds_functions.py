@@ -42,10 +42,6 @@ for item in response['DBInstances']:
 print(db_instances)
 
 
-db_instances = ['tawsdsql001','tawsdsql002','tawsdsql003','tawsdsql004','tawsdsql005','tawsdsql007','tawsdsql008','tawsdsql009',
-                'tawsdsql0110']
-
-
 # Find free hostname - confirm against AWS API
 hostname = "tawsdsql"
 arbitrary_max_number = 999
