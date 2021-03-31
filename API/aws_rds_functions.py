@@ -41,21 +41,24 @@ for item in response['DBInstances']:
     db_instances.append(item['DBInstanceIdentifier'])
 print(db_instances)
 
-
+#db_instances = ["tawsdsql001"]
 # Find free hostname - confirm against AWS API
 hostname = "tawsdsql"
-arbitrary_max_number = 999
+arbitrary_max_number = 2
 for i in range(1, arbitrary_max_number):
-    temp_name = f"{hostname}{'0'*(len(str(arbitrary_max_number))-len(str(i)))}{i}"
+    try:
+        temp_name = f"{hostname}{'0'*(len(str(arbitrary_max_number))-len(str(i)))}{i}"
 
-    if temp_name not in db_instances:
-        # Confirm db_instance name is free (AWS API call)
-        response = describe_db_instances(db_instance=temp_name)
-        if response:
-            print("DBInstance '" + temp_name + "' exists " + str(response))
+        if temp_name not in db_instances:
+            # Confirm db_instance name is free (AWS API call)
+            response = describe_db_instances(db_instance=temp_name)
+            if response:
+                print("DBInstance '" + temp_name + "' exists " + str(response))
+            else:
+                print("Free Hostname is " + temp_name)
+                break
         else:
-            print("Free Hostname is " + temp_name)
-            break
-    else:
-        continue
+            continue
+    except:
+        print("I am  here")
 
